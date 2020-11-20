@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import { DrawerItem } from "@react-navigation/drawer";
 import {
   View,
   TouchableOpacity,
   Text,
-  FlatList,
   StyleSheet,
   LayoutAnimation,
   Platform,
@@ -23,12 +23,11 @@ export default class Accordian extends Component {
     if (Platform.OS === "android") {
       UIManager.setLayoutAnimationEnabledExperimental(true);
     }
-    console.log(props.data);
   }
 
   render() {
     return (
-      <View>
+      <View key={this.props.id}>
         <TouchableOpacity
           ref={this.accordian}
           style={styles.row}
@@ -46,7 +45,19 @@ export default class Accordian extends Component {
         <View style={styles.parentHr} />
         {this.state.expanded && (
           <View style={styles.child}>
-            <Text>{this.props.data}</Text>
+            {this.props.data.map((item) => {
+              return (
+                <DrawerItem
+                  label={item.SubTitle}
+                  key={item.Id}
+                  onPress={() =>
+                    this.props.navigation.navigate("Screen 1", {
+                      itemId: item.Id,
+                    })
+                  }
+                />
+              );
+            })}
           </View>
         )}
       </View>
