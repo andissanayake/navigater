@@ -4,7 +4,7 @@ import { Icon } from "react-native-elements";
 import { StatusBarHeight } from "./statusBarHeight";
 
 function WebViewScreen({ navigation, route }) {
-  console.log(route.params.itemId);
+  console.log("id", route.params.itemId);
   return (
     <View
       style={{

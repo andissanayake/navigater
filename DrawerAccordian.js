@@ -24,23 +24,35 @@ export default class Accordian extends Component {
       UIManager.setLayoutAnimationEnabledExperimental(true);
     }
   }
-
   render() {
     return (
       <View key={this.props.id}>
         <TouchableOpacity
           ref={this.accordian}
           style={styles.row}
-          onPress={() => this.toggleExpand()}
+          onPress={() => {
+            if (this.props.data.length == 0) {
+              this.props.navigation.toggleDrawer();
+              this.props.navigation.navigate("Screen 1", {
+                itemId: this.props.id,
+              });
+            } else {
+              this.toggleExpand();
+            }
+          }}
         >
           <Text style={[styles.title, styles.font]}>{this.props.title}</Text>
-          <Icon
-            name={
-              this.state.expanded ? "keyboard-arrow-up" : "keyboard-arrow-down"
-            }
-            size={30}
-            color={Colors.DARKGRAY}
-          />
+          {this.props.data.length > 0 && (
+            <Icon
+              name={
+                this.state.expanded
+                  ? "keyboard-arrow-up"
+                  : "keyboard-arrow-down"
+              }
+              size={30}
+              color={Colors.DARKGRAY}
+            />
+          )}
         </TouchableOpacity>
         <View style={styles.parentHr} />
         {this.state.expanded && (
