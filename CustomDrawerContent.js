@@ -1,7 +1,7 @@
 import * as React from "react";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import Accordian from "./DrawerAccordian";
-import * as AppMenu from "./menu";
+import * as AppMenu from "./menuItems";
 
 function CustomDrawerContent({ navigation }) {
   return (
