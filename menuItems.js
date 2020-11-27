@@ -1,38 +1,37 @@
 export const MENUITEMS = [
   {
     Id: "AAA",
-    Title: "Title AAA",
+    Title: "menu.title1.title",
     Url: "",
     SubMenu: [],
   },
   {
     Id: "ABC",
-    Title: "Title 1",
+    Title: "menu.title2.title",
     Url: "",
     SubMenu: [
-      { SubTitle: "Sub 1", Url: "", Id: "a" },
-      { SubTitle: "Sub 2", Url: "", Id: "b" },
-      { SubTitle: "Sub 3", Url: "", Id: "c" },
+      { SubTitle: "menu.title2.subTitle1", Url: "", Id: "a" },
+      { SubTitle: "menu.title2.subTitle2", Url: "", Id: "b" },
+      { SubTitle: "menu.title2.subTitle3", Url: "", Id: "c" },
     ],
   },
   {
     Id: "BCD",
-    Title: "Title A",
+    Title: "menu.title3.title",
     Url: "",
     SubMenu: [
-      { SubTitle: "Sub A", Url: "", Id: "aa" },
-      { SubTitle: "Sub B", Url: "", Id: "ab" },
-      { SubTitle: "Sub C", Url: "", Id: "ac" },
+      { SubTitle: "menu.title3.subTitle1", Url: "", Id: "aa" },
+      { SubTitle: "menu.title3.subTitle2", Url: "", Id: "ab" },
+      { SubTitle: "menu.title3.subTitle3", Url: "", Id: "ac" },
     ],
   },
   {
     Id: "CDE",
-    Title: "Title Alpa",
+    Title: "menu.title4.title",
     Url: "",
     SubMenu: [
-      { SubTitle: "Sub Alpa", Url: "", Id: "aca" },
-      { SubTitle: "Sub Beta", Url: "", Id: "acb" },
-      { SubTitle: "Sub Gamma", Url: "", Id: "acc" },
+      { SubTitle: "menu.title4.subTitle1", Url: "", Id: "aca" },
+      { SubTitle: "menu.title4.subTitle2", Url: "", Id: "acb" },
     ],
   },
 ];

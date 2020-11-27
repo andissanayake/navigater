@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Colors } from "./Colors";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import i18n from "i18n-js";
 
 export default class Accordian extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class Accordian extends Component {
           onPress={() => {
             if (this.props.data.length == 0) {
               this.props.navigation.toggleDrawer();
-              this.props.navigation.navigate("Screen 1", {
+              this.props.navigation.navigate("WebViewScreen", {
                 itemId: this.props.id,
               });
             } else {
@@ -41,7 +42,9 @@ export default class Accordian extends Component {
             }
           }}
         >
-          <Text style={[styles.title, styles.font]}>{this.props.title}</Text>
+          <Text style={[styles.title, styles.font]}>
+            {i18n.t(this.props.title)}
+          </Text>
           {this.props.data.length > 0 && (
             <Icon
               name={
@@ -60,10 +63,10 @@ export default class Accordian extends Component {
             {this.props.data.map((item) => {
               return (
                 <DrawerItem
-                  label={item.SubTitle}
+                  label={i18n.t(item.SubTitle)}
                   key={item.Id}
                   onPress={() =>
-                    this.props.navigation.navigate("Screen 1", {
+                    this.props.navigation.navigate("WebViewScreen", {
                       itemId: item.Id,
                     })
                   }

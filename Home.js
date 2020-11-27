@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Image } from "react-native";
+import { View, Image, Text } from "react-native";
 import { Icon } from "react-native-elements";
 import { StatusBarHeight } from "./statusBarHeight";
 
