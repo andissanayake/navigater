@@ -15,6 +15,7 @@ function CustomDrawerContent({ navigation }) {
             key={item.Id}
             navigation={navigation}
             id={item.Id}
+            url={item.Url}
           />
         );
       })}

@@ -35,7 +35,7 @@ export default class Accordian extends Component {
             if (this.props.data.length == 0) {
               this.props.navigation.toggleDrawer();
               this.props.navigation.navigate("WebViewScreen", {
-                itemId: this.props.id,
+                itemUrl: this.props.url,
               });
             } else {
               this.toggleExpand();
@@ -67,7 +67,7 @@ export default class Accordian extends Component {
                   key={item.Id}
                   onPress={() =>
                     this.props.navigation.navigate("WebViewScreen", {
-                      itemId: item.Id,
+                      itemUrl: item.Url,
                     })
                   }
                 />

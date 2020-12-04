@@ -10,7 +10,7 @@ import en from "./lang/en";
 import ja from "./lang/ja";
 
 //this shoud be set using language settings
-Localization.locale = "ja";
+Localization.locale = "en";
 
 // Set the key-value pairs for the different languages you want to support.
 i18n.translations = {

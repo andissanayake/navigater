@@ -1,7 +1,8 @@
 import * as React from "react";
-import { View, Image, Text } from "react-native";
+import { View, Image } from "react-native";
 import { Icon } from "react-native-elements";
 import { StatusBarHeight } from "./statusBarHeight";
+import { WebView } from "react-native-webview";
 
 function WebViewScreen({ navigation, route }) {
   console.log("id", route.params.itemId);
@@ -14,7 +15,7 @@ function WebViewScreen({ navigation, route }) {
     >
       <View
         style={{
-          flex: 1,
+          height: 60,
           flexDirection: "row",
           justifyContent: "space-between",
           marginTop: StatusBarHeight + 15,
@@ -42,9 +43,7 @@ function WebViewScreen({ navigation, route }) {
           />
         </View>
       </View>
-      <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-        <Text>Web View-{route.params.itemId}</Text>
-      </View>
+      <WebView source={{ uri: route.params.itemUrl }} style={{ flex: 1 }} />
     </View>
   );
 }
